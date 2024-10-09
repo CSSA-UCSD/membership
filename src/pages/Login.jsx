@@ -11,14 +11,15 @@ export default function Login() {
     const [data, setData] = useState({
         email: '',
         password: '',
+        points: ''
     })
 
     const loginUser = async (e) => {
         e.preventDefault()
-        const {email, password} = data
+        const {email, password, points} = data
         try {
             const {data} = await axios.post('/login', {
-                email, password
+                email, password, points
             })
             if (data.error) {
                 toast.error(data.error)

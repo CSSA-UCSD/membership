@@ -11,16 +11,17 @@ export default function Register() {
         name: '',
         email: '',
         password: '',
+        points: ''
     })
 
     // post request
     
     const registerUser = async (e) => {
         e.preventDefault();
-        const {name, email, password} = data
+        const {name, email, password, points} = data
         try {
             const {data} = await axios.post('/register', {
-                name, email, password
+                name, email, password, points
             })
             if (data.error) {
                 toast.error(data.error)

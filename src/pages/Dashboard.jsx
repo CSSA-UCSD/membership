@@ -9,7 +9,7 @@ export default function Dashboard() {
             <h1>Profile and Dashboard</h1>
             <div className="form-group">
             {!!user && (<h2>hello, {user.name}!</h2>)}
-            {!!user && (<h2>you currently have zero points!</h2>)}
+            {!!user && (<h2>you currently have {user.points} points!</h2>)}
             </div>
             <div className="form-group">
                 <label>Event Code</label>
